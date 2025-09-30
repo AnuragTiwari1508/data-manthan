@@ -47,7 +47,7 @@ export function OceanographicChart() {
             color: "hsl(var(--chart-2))",
           },
         }}
-        className="h-[250px] sm:h-[300px]"
+        className="h-[200px] sm:h-[250px] md:h-[300px] chart-mobile-small"
       >
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={oceanData} margin={{ top: 5, right: 15, left: 5, bottom: 5 }}>

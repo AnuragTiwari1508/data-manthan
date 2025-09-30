@@ -45,8 +45,6 @@ export function DashboardContent() {
         ))}
       </div>
 
-      {/* Header Section */}
-            {/* Header Section */}
   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4">
         <div>
           <h2 className="text-2xl font-bold tracking-tight">Research Dashboard</h2>
@@ -68,29 +66,29 @@ export function DashboardContent() {
         </div>
       </div>
 
-      {/* Key Metrics */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card className="ocean-glass hover:scale-105 transition-all duration-300">
+      {/* Key Metrics - Mobile Optimized */}
+      <div className="grid mobile-grid-cards md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mobile-content">
+        <Card className="ocean-glass hover:scale-105 transition-all duration-300 card-mobile tap-highlight">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Species Recorded</CardTitle>
-            <Fish className="h-4 w-4 text-blue-600" />
+            <CardTitle className="text-sm md:text-base font-medium">Species Recorded</CardTitle>
+            <Fish className="h-5 w-5 md:h-4 md:w-4 text-blue-600" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{biodiversityData.reduce((acc, item) => acc + item.count, 0)}</div>
-            <p className="text-xs text-muted-foreground">+12% from last month</p>
+            <div className="text-xl md:text-2xl font-bold">{biodiversityData.reduce((acc, item) => acc + item.count, 0)}</div>
+            <p className="text-xs md:text-sm text-muted-foreground">+12% from last month</p>
             <Progress value={75} className="mt-2" />
           </CardContent>
         </Card>
 
-        <Card className="ocean-glass hover:scale-105 transition-all duration-300">
+        <Card className="ocean-glass hover:scale-105 transition-all duration-300 card-mobile tap-highlight">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">eDNA Samples</CardTitle>
-            <Dna className="h-4 w-4 text-cyan-600" />
+            <CardTitle className="text-sm md:text-base font-medium">eDNA Samples</CardTitle>
+            <Dna className="h-5 w-5 md:h-4 md:w-4 text-cyan-600" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{ednaProcessingData.length}</div>
-            <p className="text-xs text-muted-foreground">
-              Average quality: {Math.round(ednaProcessingData.reduce((acc, item) => acc + item.quality, 0) / ednaProcessingData.length)}%
+            <div className="text-xl md:text-2xl font-bold">{ednaProcessingData.length}</div>
+            <p className="text-xs md:text-sm text-muted-foreground">
+              Avg quality: {Math.round(ednaProcessingData.reduce((acc, item) => acc + item.quality, 0) / ednaProcessingData.length)}%
             </p>
             <Progress value={92} className="mt-2" />
           </CardContent>
