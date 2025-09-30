@@ -24,8 +24,8 @@ const lengthDistribution = [
 
 export function SequenceQualityChart() {
   return (
-    <div className="space-y-6">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div className="space-y-4 sm:space-y-6 px-2 sm:px-0">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 sm:gap-6">
         {/* Quality Score Distribution */}
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">Quality Score by Position</h3>
@@ -82,7 +82,7 @@ export function SequenceQualityChart() {
       </div>
 
       {/* Quality Summary */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+  <div className="grid grid-cols-1 md:grid-cols-4 gap-2 sm:gap-4">
         <div className="text-center p-4 border rounded-lg">
           <div className="text-2xl font-bold text-primary">Q32.4</div>
           <div className="text-sm text-muted-foreground">Mean Quality</div>

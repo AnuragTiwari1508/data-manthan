@@ -11,14 +11,14 @@ export function OtolithViewer() {
   const [showLandmarks, setShowLandmarks] = useState(true)
 
   return (
-    <div className="space-y-4">
+  <div className="space-y-4 sm:space-y-6 px-2 sm:px-0">
       {/* Viewer Controls */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-2">
+  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
+  <div className="flex items-center space-x-1 sm:space-x-2">
           <Button variant="outline" size="sm" onClick={() => setZoom(Math.max(50, zoom - 25))}>
             <ZoomOut className="h-4 w-4" />
           </Button>
-          <span className="text-sm font-medium">{zoom}%</span>
+          <span className="text-xs sm:text-sm font-medium">{zoom}%</span>
           <Button variant="outline" size="sm" onClick={() => setZoom(Math.min(400, zoom + 25))}>
             <ZoomIn className="h-4 w-4" />
           </Button>
@@ -27,7 +27,7 @@ export function OtolithViewer() {
           </Button>
         </div>
 
-        <div className="flex items-center space-x-2">
+  <div className="flex items-center space-x-1 sm:space-x-2 mt-2 sm:mt-0">
           <Button
             variant={showMeasurements ? "default" : "outline"}
             size="sm"
@@ -49,7 +49,7 @@ export function OtolithViewer() {
 
       {/* Otolith Image Viewer */}
       <div className="relative border rounded-lg overflow-hidden bg-gray-50 dark:bg-gray-900">
-        <div className="aspect-[4/3] flex items-center justify-center p-8">
+        <div className="aspect-[4/3] flex items-center justify-center p-2 sm:p-8">
           {/* Simulated otolith image */}
           <div
             className="relative bg-gradient-to-br from-gray-200 to-gray-400 dark:from-gray-700 dark:to-gray-500 rounded-full border-4 border-gray-300 dark:border-gray-600"
@@ -96,8 +96,8 @@ export function OtolithViewer() {
       </div>
 
       {/* Analysis Tools */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="space-y-2">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-2 sm:gap-4">
+  <div className="space-y-2">
           <h4 className="font-medium text-sm">Contour Analysis</h4>
           <div className="text-xs space-y-1">
             <div className="flex justify-between">
@@ -115,7 +115,7 @@ export function OtolithViewer() {
           </div>
         </div>
 
-        <div className="space-y-2">
+  <div className="space-y-2">
           <h4 className="font-medium text-sm">Shape Descriptors</h4>
           <div className="text-xs space-y-1">
             <div className="flex justify-between">
@@ -133,7 +133,7 @@ export function OtolithViewer() {
           </div>
         </div>
 
-        <div className="space-y-2">
+  <div className="space-y-2">
           <h4 className="font-medium text-sm">Quality Metrics</h4>
           <div className="text-xs space-y-1">
             <div className="flex justify-between">

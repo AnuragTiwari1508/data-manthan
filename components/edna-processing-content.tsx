@@ -148,7 +148,7 @@ export function EdnaProcessingContent() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6 px-2 sm:px-0">
       {/* Ocean Animation Banner */}
       <div className="relative h-32 w-full overflow-hidden rounded-xl mb-4 ocean-gradient">
         <div className="absolute inset-0 flex items-center justify-center">

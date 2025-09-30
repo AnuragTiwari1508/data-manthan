@@ -134,8 +134,8 @@ export function SequenceViewer({ sequences = [] }: SequenceViewerProps) {
   const sequenceAnalysis = analyzeSequence()
 
   return (
-    <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row gap-4">
+    <div className="space-y-4 sm:space-y-6 px-2 sm:px-0">
+  <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
         <div className="flex-1">
           <Label htmlFor="sequence-select">Select Sequence</Label>
           <Select value={selectedSequence} onValueChange={setSelectedSequence}>
@@ -152,7 +152,7 @@ export function SequenceViewer({ sequences = [] }: SequenceViewerProps) {
           </Select>
         </div>
 
-        <div className="flex gap-2">
+  <div className="flex gap-1 sm:gap-2">
           <Input
             placeholder="Search sequences..."
             value={searchTerm}
@@ -166,13 +166,13 @@ export function SequenceViewer({ sequences = [] }: SequenceViewerProps) {
       </div>
 
       <Tabs value={viewMode} onValueChange={(value) => setViewMode(value as any)}>
-        <TabsList>
+        <TabsList className="text-xs sm:text-sm">
           <TabsTrigger value="colored">Colored</TabsTrigger>
           <TabsTrigger value="formatted">Formatted</TabsTrigger>
           <TabsTrigger value="raw">Raw</TabsTrigger>
         </TabsList>
 
-        <TabsContent value={viewMode} className="space-y-4">
+        <TabsContent value={viewMode} className="space-y-2 sm:space-y-4">
           <Card>
             <CardHeader>
               <div className="flex items-center justify-between">
@@ -201,7 +201,7 @@ export function SequenceViewer({ sequences = [] }: SequenceViewerProps) {
               </div>
             </CardHeader>
             <CardContent>
-              <ScrollArea className="h-48 w-full rounded border p-4">
+              <ScrollArea className="h-48 w-full rounded border p-2 sm:p-4">
                 <div className="font-mono text-sm leading-relaxed break-all">
                   {viewMode === "colored" ? (
                     <div className="flex flex-wrap">
@@ -216,7 +216,7 @@ export function SequenceViewer({ sequences = [] }: SequenceViewerProps) {
           </Card>
 
           {sequenceAnalysis && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-4">
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">

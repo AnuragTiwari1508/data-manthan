@@ -159,9 +159,9 @@ export function DataVisualizationContent() {
     }
   }
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6 px-2 sm:px-0">
       {/* Ocean Animation Banner */}
-      <div className="relative h-32 w-full overflow-hidden rounded-xl mb-4 ocean-gradient">
+  <div className="relative h-24 sm:h-32 w-full overflow-hidden rounded-xl mb-2 sm:mb-4 ocean-gradient">
         <div className="absolute inset-0 flex items-center justify-center">
           <svg className="absolute w-full h-full animate-wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M0,0 C150,80 350,80 500,60 C650,40 850,40 1000,60 C1150,80 1200,80 1200,80 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.2)" />
@@ -191,14 +191,14 @@ export function DataVisualizationContent() {
       </div>
 
       {/* Header Section */}
-      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+  <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-2 sm:gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-balance">Data Visualization Dashboard</h1>
-          <p className="text-muted-foreground text-pretty">
+          <h1 className="text-xl sm:text-3xl font-bold text-balance">Data Visualization Dashboard</h1>
+          <p className="text-sm sm:text-base text-muted-foreground text-pretty">
             Interactive visualization of oceanographic parameters and marine biodiversity data
           </p>
         </div>
-        <div className="flex flex-wrap gap-2">
+  <div className="flex flex-wrap gap-1 sm:gap-2">
           <div className="flex items-center gap-2">
             <Switch
               checked={isRealTime}
@@ -209,12 +209,12 @@ export function DataVisualizationContent() {
               Real-time {isRealTime && <RefreshCw className="inline h-3 w-3 animate-spin ml-1" />}
             </label>
           </div>
-          <Button variant="outline" className="water-droplet">
+          <Button variant="outline" className="water-droplet text-xs sm:text-sm px-2 sm:px-4 py-1 sm:py-2">
             <Calendar className="mr-2 h-4 w-4" />
             Date Range
           </Button>
           <Select value={filterStatus} onValueChange={setFilterStatus}>
-            <SelectTrigger className="w-[150px]">
+            <SelectTrigger className="w-[110px] sm:w-[150px]">
               <Filter className="mr-2 h-4 w-4" />
               <SelectValue placeholder="Filter Status" />
             </SelectTrigger>
@@ -226,7 +226,7 @@ export function DataVisualizationContent() {
             </SelectContent>
           </Select>
           <Select onValueChange={exportData}>
-            <SelectTrigger className="w-[150px]">
+            <SelectTrigger className="w-[110px] sm:w-[150px]">
               <Download className="mr-2 h-4 w-4" />
               <SelectValue placeholder="Export" />
             </SelectTrigger>
@@ -241,8 +241,8 @@ export function DataVisualizationContent() {
 
       {/* Search and Filter Bar */}
       <Card>
-        <CardContent className="p-4">
-          <div className="flex flex-col md:flex-row gap-4">
+        <CardContent className="p-2 sm:p-4">
+          <div className="flex flex-col md:flex-row gap-2 sm:gap-4">
             <div className="flex-1">
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -255,7 +255,7 @@ export function DataVisualizationContent() {
               </div>
             </div>
             <Select value={selectedLocation} onValueChange={setSelectedLocation}>
-              <SelectTrigger className="w-[200px]">
+              <SelectTrigger className="w-[120px] sm:w-[200px]">
                 <SelectValue placeholder="Select Location" />
               </SelectTrigger>
               <SelectContent>
@@ -268,7 +268,7 @@ export function DataVisualizationContent() {
               </SelectContent>
             </Select>
             <Select value={selectedParameter} onValueChange={setSelectedParameter}>
-              <SelectTrigger className="w-[200px]">
+              <SelectTrigger className="w-[120px] sm:w-[200px]">
                 <SelectValue placeholder="Select Parameter" />
               </SelectTrigger>
               <SelectContent>
@@ -369,7 +369,7 @@ export function DataVisualizationContent() {
       )}
 
       {/* Live Data Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4">
         {filteredBiodiversityData.slice(0, 4).map((item, idx) => (
           <Card key={idx} className="ocean-glass hover:scale-105 transition-all duration-300 cursor-pointer">
             <CardContent className="p-4">
@@ -406,7 +406,7 @@ export function DataVisualizationContent() {
           <CardDescription>Real-time monitoring of key ocean parameters</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
             {environmentalParameters.map((param, idx) => (
               <div key={idx} className="p-4 border rounded-lg">
                 <div className="flex items-center justify-between mb-2">
@@ -434,7 +434,7 @@ export function DataVisualizationContent() {
           <CardDescription>Configure data layers and parameters for analysis</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-2 sm:gap-4">
             <div>
               <label className="text-sm font-medium mb-2 block">Region</label>
               <Select defaultValue="arabian-sea">
@@ -495,8 +495,8 @@ export function DataVisualizationContent() {
       </Card>
 
       {/* Main Visualization Tabs */}
-      <Tabs defaultValue="map" className="space-y-4">
-        <TabsList className="grid w-full grid-cols-4">
+  <Tabs defaultValue="map" className="space-y-2 sm:space-y-4">
+  <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 text-xs sm:text-sm">
           <TabsTrigger value="map" className="flex items-center">
             <Map className="mr-2 h-4 w-4" />
             Interactive Map
@@ -515,8 +515,8 @@ export function DataVisualizationContent() {
           </TabsTrigger>
         </TabsList>
 
-        <TabsContent value="map" className="space-y-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <TabsContent value="map" className="space-y-2 sm:space-y-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 sm:gap-6">
             <Card className="lg:col-span-2">
               <CardHeader>
                 <CardTitle>Interactive Ocean Map</CardTitle>
@@ -566,8 +566,8 @@ export function DataVisualizationContent() {
           </div>
         </TabsContent>
 
-        <TabsContent value="trends" className="space-y-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <TabsContent value="trends" className="space-y-2 sm:space-y-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 sm:gap-6">
             <Card>
               <CardHeader>
                 <CardTitle>Chlorophyll-a Trends</CardTitle>
@@ -590,7 +590,7 @@ export function DataVisualizationContent() {
           </div>
         </TabsContent>
 
-        <TabsContent value="profiles" className="space-y-4">
+  <TabsContent value="profiles" className="space-y-2 sm:space-y-4">
           <Card>
             <CardHeader>
               <CardTitle>Temperature-Depth Profiles</CardTitle>
@@ -602,8 +602,8 @@ export function DataVisualizationContent() {
           </Card>
         </TabsContent>
 
-        <TabsContent value="correlations" className="space-y-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <TabsContent value="correlations" className="space-y-2 sm:space-y-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 sm:gap-6">
             <Card>
               <CardHeader>
                 <CardTitle>Parameter Correlations</CardTitle>

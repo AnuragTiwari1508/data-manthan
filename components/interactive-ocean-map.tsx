@@ -16,9 +16,9 @@ export function InteractiveOceanMap() {
   ]
 
   return (
-    <div className="space-y-4">
+  <div className="space-y-2 sm:space-y-4 px-2 sm:px-0">
       {/* Map Container */}
-      <div className="relative h-96 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 rounded-lg border overflow-hidden">
+  <div className="relative h-64 sm:h-96 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 rounded-lg border overflow-hidden">
         {/* Simulated map background */}
         <div className="absolute inset-0 opacity-20">
           <img
@@ -51,7 +51,7 @@ export function InteractiveOceanMap() {
         ))}
 
         {/* Legend */}
-        <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-sm rounded-lg p-3 space-y-2">
+  <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-background/90 backdrop-blur-sm rounded-lg p-2 sm:p-3 space-y-1 sm:space-y-2 text-xs sm:text-sm">
           <h4 className="font-medium text-sm">Temperature (°C)</h4>
           <div className="flex items-center space-x-2">
             <div className="w-4 h-2 bg-gradient-to-r from-blue-500 to-red-500 rounded"></div>

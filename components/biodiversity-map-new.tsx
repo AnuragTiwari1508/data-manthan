@@ -23,8 +23,8 @@ export function BiodiversityMap() {
   }
 
   return (
-    <div className="space-y-4">
-      <div className="relative">
+    <div className="space-y-2 sm:space-y-4 px-2 sm:px-0">
+  <div className="relative">
         <img
           src="/images/mixed-layer-depth.png"
           alt="Mixed layer depth visualization from oceanographic research"
@@ -39,22 +39,22 @@ export function BiodiversityMap() {
         </div>
       </div>
 
-      <div className="space-y-3">
-        <h4 className="font-medium text-sm">Species Distribution Summary</h4>
+      <div className="space-y-2 sm:space-y-3">
+        <h4 className="font-medium text-xs sm:text-sm">Species Distribution Summary</h4>
         {speciesData.map((species, index) => (
           <Card key={index} className="hover:shadow-md transition-shadow">
-            <CardContent className="p-3">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <CardContent className="p-2 sm:p-3">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2">
                 <div className="flex-1">
-                  <p className="font-medium text-sm italic">{species.name}</p>
+                  <p className="font-medium text-xs sm:text-sm italic">{species.name}</p>
                   <p className="text-xs text-muted-foreground">{species.location}</p>
                 </div>
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-2">
                   <Badge className={getStatusColor(species.status)}>
                     {species.status}
                   </Badge>
                   <div className="text-right">
-                    <p className="text-sm font-medium">{species.count.toLocaleString()}</p>
+                    <p className="text-xs sm:text-sm font-medium">{species.count.toLocaleString()}</p>
                     <p className={`text-xs ${species.trend.startsWith('+') ? 'text-green-600' : 'text-red-600'}`}>
                       {species.trend}
                     </p>

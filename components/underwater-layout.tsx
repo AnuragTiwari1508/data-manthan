@@ -13,7 +13,7 @@ export function SlidingContent({ children, className, delay = 0 }: SlidingConten
   return (
     <div 
       className={cn(
-        "slide-content rounded-lg p-6 m-4 text-white",
+        "slide-content rounded-lg p-4 sm:p-6 m-2 sm:m-4 text-white",
         "border border-cyan-500/20 shadow-lg shadow-cyan-500/10",
         className
       )}
@@ -31,7 +31,7 @@ interface UnderWaterLayoutProps {
 
 export function UnderWaterLayout({ children, showParticles = true }: UnderWaterLayoutProps) {
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative px-2 sm:px-0">
       {/* Underwater particles */}
       {showParticles && (
         <div className="underwater-particles">
@@ -50,7 +50,6 @@ export function UnderWaterLayout({ children, showParticles = true }: UnderWaterL
           ))}
         </div>
       )}
-      
       {/* Main content */}
       <div className="relative z-10">
         {children}

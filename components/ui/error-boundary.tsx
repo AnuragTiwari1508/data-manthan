@@ -43,7 +43,9 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoun
       return <DefaultErrorFallback error={this.state.error!} resetError={this.resetError} />
     }
 
-    return this.props.children
+    return (
+      <div className="p-2 sm:p-4">{this.props.children}</div>
+    )
   }
 }
 
@@ -54,24 +56,24 @@ interface ErrorFallbackProps {
 
 function DefaultErrorFallback({ error, resetError }: ErrorFallbackProps) {
   return (
-    <div className="min-h-[50vh] flex items-center justify-center p-4">
-      <Card className="w-full max-w-md">
+    <div className="min-h-[50vh] flex items-center justify-center p-2 sm:p-4">
+      <Card className="w-full max-w-xs sm:max-w-md">
         <CardHeader className="text-center">
-          <div className="mx-auto mb-4 h-12 w-12 rounded-full bg-destructive/10 flex items-center justify-center">
-            <AlertTriangle className="h-6 w-6 text-destructive" />
+          <div className="mx-auto mb-2 sm:mb-4 h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-destructive/10 flex items-center justify-center">
+            <AlertTriangle className="h-5 w-5 sm:h-6 sm:w-6 text-destructive" />
           </div>
-          <CardTitle className="text-destructive">Something went wrong</CardTitle>
+          <CardTitle className="text-destructive text-base sm:text-lg">Something went wrong</CardTitle>
           <CardDescription>
             An error occurred while loading the marine data system.
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="rounded-lg bg-muted p-3">
-            <p className="text-sm font-mono text-muted-foreground">
+        <CardContent className="space-y-2 sm:space-y-4">
+          <div className="rounded-lg bg-muted p-2 sm:p-3">
+            <p className="text-xs sm:text-sm font-mono text-muted-foreground">
               {error.message || "Unknown error occurred"}
             </p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex flex-col sm:flex-row gap-2">
             <Button onClick={resetError} className="flex-1">
               <RefreshCw className="mr-2 h-4 w-4" />
               Try Again
@@ -90,15 +92,15 @@ function DefaultErrorFallback({ error, resetError }: ErrorFallbackProps) {
 export function DataErrorFallback({ error, resetError }: ErrorFallbackProps) {
   return (
     <Card className="border-destructive/50">
-      <CardContent className="p-6">
-        <div className="flex items-center gap-3 mb-4">
-          <AlertTriangle className="h-5 w-5 text-destructive" />
-          <h3 className="font-semibold text-destructive">Data Loading Error</h3>
+      <CardContent className="p-3 sm:p-6">
+        <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-4">
+          <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 text-destructive" />
+          <h3 className="font-semibold text-destructive text-base sm:text-lg">Data Loading Error</h3>
         </div>
-        <p className="text-sm text-muted-foreground mb-4">
+        <p className="text-xs sm:text-sm text-muted-foreground mb-2 sm:mb-4">
           Failed to load marine research data. This could be due to a network issue or server error.
         </p>
-        <div className="flex gap-2">
+        <div className="flex flex-col sm:flex-row gap-2">
           <Button size="sm" onClick={resetError}>
             <RefreshCw className="mr-2 h-3 w-3" />
             Retry
@@ -115,10 +117,10 @@ export function DataErrorFallback({ error, resetError }: ErrorFallbackProps) {
 export function NetworkErrorFallback() {
   return (
     <Card className="border-destructive/50">
-      <CardContent className="p-6 text-center">
-        <AlertTriangle className="h-8 w-8 text-destructive mx-auto mb-3" />
-        <h3 className="font-semibold text-destructive mb-2">Network Connection Error</h3>
-        <p className="text-sm text-muted-foreground mb-4">
+      <CardContent className="p-3 sm:p-6 text-center">
+        <AlertTriangle className="h-6 w-6 sm:h-8 sm:w-8 text-destructive mx-auto mb-2 sm:mb-3" />
+        <h3 className="font-semibold text-destructive mb-1 sm:mb-2 text-base sm:text-lg">Network Connection Error</h3>
+        <p className="text-xs sm:text-sm text-muted-foreground mb-2 sm:mb-4">
           Unable to connect to the marine data servers. Please check your internet connection.
         </p>
         <Button size="sm" onClick={() => window.location.reload()}>

@@ -21,8 +21,8 @@ const oceanData = [
 
 export function OceanographicChart() {
   return (
-    <div className="space-y-4">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div className="space-y-4 sm:space-y-6 px-2 sm:px-0">
+  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4">
         <h3 className="text-lg font-semibold">Eastern Arabian Sea Parameters</h3>
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 text-sm">
           <div className="flex items-center">

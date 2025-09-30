@@ -26,9 +26,9 @@ const rarefactionData = [
 
 export function BiodiversityMetrics() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-2 sm:space-y-6 px-2 sm:px-0">
       {/* Key Diversity Indices */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-2 sm:gap-6">
         <Card>
           <CardHeader>
             <CardTitle className="text-lg">Shannon Diversity</CardTitle>

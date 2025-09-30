@@ -12,8 +12,8 @@ export function SalinityHeatmap() {
   }
 
   return (
-    <div className="space-y-4">
-      <div className="grid grid-cols-5 gap-1 aspect-square">
+    <div className="space-y-4 sm:space-y-6 px-2 sm:px-0">
+  <div className="grid grid-cols-5 gap-1 aspect-square">
         {salinityHeatmapData.flat().map((value, index) => (
           <div
             key={index}
@@ -25,7 +25,7 @@ export function SalinityHeatmap() {
         ))}
       </div>
 
-      <div className="flex items-center justify-between text-sm">
+  <div className="flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm gap-2 sm:gap-0">
         <div className="flex items-center space-x-2">
           <div className="w-4 h-4 rounded" style={{ backgroundColor: "rgba(59, 130, 246, 0.3)" }}></div>
           <span>34.7 PSU</span>
@@ -37,18 +37,20 @@ export function SalinityHeatmap() {
       </div>
 
       <div className="space-y-2">
-        <h4 className="font-medium text-sm">Salinity Zones</h4>
-        <div className="flex items-center justify-between">
-          <span className="text-sm">Coastal Waters</span>
-          <Badge variant="outline">34.7-35.0 PSU</Badge>
-        </div>
-        <div className="flex items-center justify-between">
-          <span className="text-sm">Open Ocean</span>
-          <Badge variant="secondary">35.1-35.3 PSU</Badge>
-        </div>
-        <div className="flex items-center justify-between">
-          <span className="text-sm">High Salinity</span>
-          <Badge variant="default">35.4-35.5 PSU</Badge>
+        <h4 className="font-medium text-xs sm:text-sm">Salinity Zones</h4>
+        <div className="flex flex-col gap-1">
+          <div className="flex items-center justify-between text-xs sm:text-sm">
+            <span>Coastal Waters</span>
+            <Badge variant="outline">34.7-35.0 PSU</Badge>
+          </div>
+          <div className="flex items-center justify-between text-xs sm:text-sm">
+            <span>Open Ocean</span>
+            <Badge variant="secondary">35.1-35.3 PSU</Badge>
+          </div>
+          <div className="flex items-center justify-between text-xs sm:text-sm">
+            <span>High Salinity</span>
+            <Badge variant="default">35.4-35.5 PSU</Badge>
+          </div>
         </div>
       </div>
     </div>
