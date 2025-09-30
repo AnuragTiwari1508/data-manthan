@@ -28,13 +28,13 @@ const speciesData = [
 
 export function TaxonomicComposition() {
   return (
-    <div className="space-y-6">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div className="space-y-8 px-2 sm:px-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         {/* Phylum Distribution */}
         <Card>
           <CardHeader>
-            <CardTitle>Phylum Distribution</CardTitle>
-            <CardDescription>Taxonomic composition at phylum level</CardDescription>
+            <CardTitle className="text-base sm:text-lg">Phylum Distribution</CardTitle>
+            <CardDescription className="text-xs sm:text-sm">Taxonomic composition at phylum level</CardDescription>
           </CardHeader>
           <CardContent>
             <ChartContainer
@@ -43,7 +43,7 @@ export function TaxonomicComposition() {
                   label: "ASV Count",
                 },
               }}
-              className="h-[300px]"
+              className="h-48 sm:h-[300px]"
             >
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
@@ -51,7 +51,7 @@ export function TaxonomicComposition() {
                     data={phylumData}
                     cx="50%"
                     cy="50%"
-                    outerRadius={80}
+                    outerRadius={60}
                     dataKey="value"
                     label={({ name, percentage }) => `${name} (${percentage}%)`}
                   >
@@ -69,19 +69,19 @@ export function TaxonomicComposition() {
         {/* Top Species */}
         <Card>
           <CardHeader>
-            <CardTitle>Most Abundant Species</CardTitle>
-            <CardDescription>Top detected species by read count</CardDescription>
+            <CardTitle className="text-base sm:text-lg">Most Abundant Species</CardTitle>
+            <CardDescription className="text-xs sm:text-sm">Top detected species by read count</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {speciesData.slice(0, 6).map((species, index) => (
-                <div key={index} className="space-y-2">
-                  <div className="flex justify-between text-sm">
+                <div key={index} className="space-y-1.5 sm:space-y-2">
+                  <div className="flex justify-between text-xs sm:text-sm">
                     <span className="font-medium">{species.species}</span>
                     <span>{species.percentage}%</span>
                   </div>
-                  <Progress value={species.percentage} className="h-2" />
-                  <div className="text-xs text-muted-foreground">{species.reads.toLocaleString()} reads</div>
+                  <Progress value={species.percentage} className="h-1.5 sm:h-2" />
+                  <div className="text-[10px] sm:text-xs text-muted-foreground">{species.reads.toLocaleString()} reads</div>
                 </div>
               ))}
             </div>
@@ -92,20 +92,20 @@ export function TaxonomicComposition() {
       {/* Detailed Species List */}
       <Card>
         <CardHeader>
-          <CardTitle>Species Detection Results</CardTitle>
-          <CardDescription>Complete list of identified species with confidence scores</CardDescription>
+          <CardTitle className="text-base sm:text-lg">Species Detection Results</CardTitle>
+          <CardDescription className="text-xs sm:text-sm">Complete list of identified species with confidence scores</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="space-y-3">
+          <div className="space-y-2 sm:space-y-3">
             {speciesData.map((species, index) => (
-              <div key={index} className="flex items-center justify-between p-3 border rounded-lg">
+              <div key={index} className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-2 sm:p-3 border rounded-lg gap-2 sm:gap-0">
                 <div className="flex-1">
-                  <p className="font-medium text-sm">{species.species}</p>
-                  <p className="text-xs text-muted-foreground">
+                  <p className="font-medium text-xs sm:text-sm">{species.species}</p>
+                  <p className="text-[10px] sm:text-xs text-muted-foreground">
                     {species.reads.toLocaleString()} reads ({species.percentage}%)
                   </p>
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-1.5 sm:space-x-2">
                   <Badge
                     variant={species.percentage > 10 ? "default" : species.percentage > 5 ? "secondary" : "outline"}
                   >
@@ -118,7 +118,7 @@ export function TaxonomicComposition() {
                         ? "95%"
                         : species.percentage > 5
                           ? "90%"
-                          : "85%"}{" "}
+                          : "85%"} {" "}
                     conf.
                   </Badge>
                 </div>
@@ -129,29 +129,29 @@ export function TaxonomicComposition() {
       </Card>
 
       {/* Taxonomic Summary Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4">
         <Card>
-          <CardContent className="p-4 text-center">
-            <div className="text-2xl font-bold text-primary">1,247</div>
-            <div className="text-sm text-muted-foreground">Total ASVs</div>
+          <CardContent className="p-2 sm:p-4 text-center">
+            <div className="text-lg sm:text-2xl font-bold text-primary">1,247</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Total ASVs</div>
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-4 text-center">
-            <div className="text-2xl font-bold text-primary">156</div>
-            <div className="text-sm text-muted-foreground">Species Identified</div>
+          <CardContent className="p-2 sm:p-4 text-center">
+            <div className="text-lg sm:text-2xl font-bold text-primary">156</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Species Identified</div>
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-4 text-center">
-            <div className="text-2xl font-bold text-primary">23</div>
-            <div className="text-sm text-muted-foreground">Families</div>
+          <CardContent className="p-2 sm:p-4 text-center">
+            <div className="text-lg sm:text-2xl font-bold text-primary">23</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Families</div>
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-4 text-center">
-            <div className="text-2xl font-bold text-primary">8</div>
-            <div className="text-sm text-muted-foreground">Phyla</div>
+          <CardContent className="p-2 sm:p-4 text-center">
+            <div className="text-lg sm:text-2xl font-bold text-primary">8</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Phyla</div>
           </CardContent>
         </Card>
       </div>

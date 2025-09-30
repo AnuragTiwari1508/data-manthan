@@ -12,9 +12,9 @@ import { biodiversityData, oceanographicData, ednaProcessingData, otolithAnalysi
 
 export function DashboardContent() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-2 sm:space-y-6 px-2 sm:px-0">
       {/* Ocean Animation Banner */}
-      <div className="relative h-40 w-full overflow-hidden rounded-xl mb-6 ocean-gradient">
+  <div className="relative h-28 sm:h-40 w-full overflow-hidden rounded-xl mb-3 sm:mb-6 ocean-gradient">
         <div className="absolute inset-0 flex items-center justify-center">
           <svg className="absolute w-full h-full animate-wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M0,0 C150,80 350,80 500,60 C650,40 850,40 1000,60 C1150,80 1200,80 1200,80 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.2)" />
@@ -45,29 +45,24 @@ export function DashboardContent() {
         ))}
       </div>
 
-      {/* Header Section - Mobile Optimized */}
-      <div className="mobile-section">
-        <div className="flex flex-col gap-4">
-          <div className="text-center md:text-left">
-            <h2 className="text-xl md:text-2xl font-bold tracking-tight mobile-section-title">Research Dashboard</h2>
-            <p className="text-sm md:text-base text-muted-foreground">Real-time marine data monitoring and analysis</p>
-          </div>
-          <div className="flex flex-col md:flex-row items-center gap-3">
-            <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200 tap-highlight">
-              <Activity className="mr-1 h-3 w-3" />
-              System Active
-            </Badge>
-            <div className="flex flex-col md:flex-row gap-2 w-full md:w-auto">
-              <Button variant="outline" size="sm" className="btn-mobile md:w-auto tap-highlight">
-                <RefreshCw className="mr-2 h-4 w-4" />
-                Refresh Data
-              </Button>
-              <Button size="sm" className="btn-mobile md:w-auto tap-highlight">
-                <Download className="mr-2 h-4 w-4" />
-                Export Report
-              </Button>
-            </div>
-          </div>
+  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4">
+        <div>
+          <h2 className="text-2xl font-bold tracking-tight">Research Dashboard</h2>
+          <p className="text-muted-foreground">Real-time marine data monitoring and analysis platform</p>
+        </div>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-3">
+          <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+            <Activity className="mr-1 h-3 w-3" />
+            System Active
+          </Badge>
+          <Button variant="outline" size="sm" className="w-full sm:w-auto">
+            <RefreshCw className="mr-2 h-4 w-4" />
+            Refresh Data
+          </Button>
+          <Button size="sm" className="w-full sm:w-auto">
+            <Download className="mr-2 h-4 w-4" />
+            Export Report
+          </Button>
         </div>
       </div>
 

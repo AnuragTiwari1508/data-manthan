@@ -9,7 +9,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
   return (
     <Sonner
       theme={theme as ToasterProps['theme']}
-      className="toaster group"
+      className="toaster group px-2 sm:px-0 py-2 sm:py-0"
       style={
         {
           '--normal-bg': 'var(--popover)',

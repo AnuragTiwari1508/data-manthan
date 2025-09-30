@@ -42,7 +42,7 @@ export function SpeciesClassification() {
   ]
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6 px-2 sm:px-0">
       {/* AI Classification Results */}
       <Card>
         <CardHeader>
@@ -101,7 +101,7 @@ export function SpeciesClassification() {
       </Card>
 
       {/* Model Performance */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 sm:gap-6">
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center">

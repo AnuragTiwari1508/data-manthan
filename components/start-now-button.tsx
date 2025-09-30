@@ -44,7 +44,7 @@ export function StartNowButton({
   }
 
   return (
-    <Button
+        <Button
       onClick={handleClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -73,7 +73,7 @@ export function StartNowButton({
       </div>
 
       {/* Content */}
-      <span className="relative z-10 flex items-center gap-2">
+         <span className="relative z-10 flex items-center gap-2 sm:gap-3">
         <Waves 
           className={cn(
             "transition-all duration-300",

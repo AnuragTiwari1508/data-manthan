@@ -16,11 +16,11 @@ export function ChatbotFloating() {
   return (
     <>
       {/* Floating Chatbot Icon */}
-      <div className="fixed bottom-6 right-6 z-50">
+  <div className="fixed bottom-3 right-3 sm:bottom-6 sm:right-6 z-50">
         <div className="relative">
           {/* Chat Preview Card */}
           {isOpen && (
-            <div className="absolute bottom-16 right-0 w-80 mb-2">
+            <div className="absolute bottom-16 right-0 w-64 sm:w-80 mb-2">
               <Card className="bg-slate-900/95 border-cyan-500/30 backdrop-blur-lg shadow-xl">
                 <CardHeader className="pb-3">
                   <div className="flex items-center justify-between">

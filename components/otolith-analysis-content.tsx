@@ -168,9 +168,9 @@ export function OtolithAnalysisContent() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6 px-2 sm:px-0">
       {/* Ocean Animation Banner */}
-      <div className="relative h-32 w-full overflow-hidden rounded-xl mb-4 ocean-gradient">
+  <div className="relative h-24 sm:h-32 w-full overflow-hidden rounded-xl mb-2 sm:mb-4 ocean-gradient">
         <div className="absolute inset-0 flex items-center justify-center">
           <svg className="absolute w-full h-full animate-wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M0,0 C150,80 350,80 500,60 C650,40 850,40 1000,60 C1150,80 1200,80 1200,80 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.2)" />
@@ -201,14 +201,14 @@ export function OtolithAnalysisContent() {
       </div>
 
       {/* Header Section */}
-      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+  <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-2 sm:gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-balance">Otolith Analysis Module</h1>
-          <p className="text-muted-foreground text-pretty">
+          <h1 className="text-xl sm:text-3xl font-bold text-balance">Otolith Analysis Module</h1>
+          <p className="text-sm sm:text-base text-muted-foreground text-pretty">
             AI-powered otolith shape analysis and morphometrics for species identification
           </p>
         </div>
-        <div className="flex flex-wrap gap-2">
+  <div className="flex flex-wrap gap-1 sm:gap-2">
           <div className="flex items-center gap-2">
             <Switch
               checked={realTimeMonitoring}
@@ -265,7 +265,7 @@ export function OtolithAnalysisContent() {
           <CardDescription>Configure otolith analysis parameters and filters</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="flex flex-col md:flex-row gap-4">
+          <div className="flex flex-col md:flex-row gap-2 sm:gap-4">
             <div className="flex-1">
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -278,7 +278,7 @@ export function OtolithAnalysisContent() {
               </div>
             </div>
             <Select value={ageFilter} onValueChange={setAgeFilter}>
-              <SelectTrigger className="w-[150px]">
+              <SelectTrigger className="w-[110px] sm:w-[150px]">
                 <Filter className="mr-2 h-4 w-4" />
                 <SelectValue placeholder="Age Filter" />
               </SelectTrigger>
@@ -291,7 +291,7 @@ export function OtolithAnalysisContent() {
               </SelectContent>
             </Select>
             <Select value={measurementMode} onValueChange={(value: "manual" | "auto") => setMeasurementMode(value)}>
-              <SelectTrigger className="w-[150px]">
+              <SelectTrigger className="w-[110px] sm:w-[150px]">
                 <Ruler className="mr-2 h-4 w-4" />
                 <SelectValue placeholder="Measurement" />
               </SelectTrigger>
@@ -447,7 +447,7 @@ export function OtolithAnalysisContent() {
       )}
 
       {/* Analysis Results Overview */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4">
         {filteredOtolithData.slice(0, 4).map((item, idx) => (
           <Card key={idx} className="ocean-glass hover:scale-105 transition-all duration-300 cursor-pointer">
             <CardContent className="p-4">
@@ -483,7 +483,7 @@ export function OtolithAnalysisContent() {
           <CardDescription>Reference database for species identification</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
             {marineSpeciesData.map((species, idx) => (
               <div key={idx} className="p-4 border rounded-lg hover:bg-muted/50">
                 <div className="flex items-center justify-between mb-2">
@@ -514,11 +514,11 @@ export function OtolithAnalysisContent() {
           <CardDescription>Upload high-resolution otolith images for automated analysis</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="border-2 border-dashed border-border rounded-lg p-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-6">
+            <div className="space-y-2 sm:space-y-4">
+              <div className="border-2 border-dashed border-border rounded-lg p-4 sm:p-8 text-center">
                 <Upload className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="text-xs sm:text-sm text-muted-foreground mb-4">
                   Drag and drop otolith images here, or click to browse
                 </p>
                 <Button onClick={handleFileUpload} disabled={analysisStatus === "processing"}>
@@ -528,7 +528,7 @@ export function OtolithAnalysisContent() {
 
               {analysisStatus === "processing" && (
                 <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
+                  <div className="flex justify-between text-xs sm:text-sm">
                     <span>Processing images...</span>
                     <span>{uploadProgress}%</span>
                   </div>
@@ -537,7 +537,7 @@ export function OtolithAnalysisContent() {
               )}
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-2 sm:space-y-4">
               <div>
                 <Label htmlFor="species">Expected Species (Optional)</Label>
                 <Input id="species" placeholder="e.g., Sardinella longiceps" />
@@ -557,8 +557,8 @@ export function OtolithAnalysisContent() {
 
       {/* Analysis Results */}
       {analysisStatus === "complete" && (
-        <Tabs defaultValue="viewer" className="space-y-4">
-          <TabsList className="grid w-full grid-cols-4">
+  <Tabs defaultValue="viewer" className="space-y-2 sm:space-y-4">
+          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 text-xs sm:text-sm">
             <TabsTrigger value="viewer" className="flex items-center">
               <Eye className="mr-2 h-4 w-4" />
               Otolith Viewer
@@ -577,8 +577,8 @@ export function OtolithAnalysisContent() {
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="viewer" className="space-y-4">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <TabsContent value="viewer" className="space-y-2 sm:space-y-4">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 sm:gap-6">
               <Card className="lg:col-span-2">
                 <CardHeader>
                   <CardTitle>Interactive Otolith Viewer</CardTitle>
@@ -636,7 +636,7 @@ export function OtolithAnalysisContent() {
             </div>
           </TabsContent>
 
-          <TabsContent value="morphometrics" className="space-y-4">
+          <TabsContent value="morphometrics" className="space-y-2 sm:space-y-4">
             <Card>
               <CardHeader>
                 <CardTitle>Morphometric Analysis</CardTitle>
@@ -648,12 +648,12 @@ export function OtolithAnalysisContent() {
             </Card>
           </TabsContent>
 
-          <TabsContent value="classification" className="space-y-4">
+          <TabsContent value="classification" className="space-y-2 sm:space-y-4">
             <SpeciesClassification />
           </TabsContent>
 
-          <TabsContent value="comparison" className="space-y-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <TabsContent value="comparison" className="space-y-2 sm:space-y-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 sm:gap-6">
               <Card>
                 <CardHeader>
                   <CardTitle>Reference Database</CardTitle>

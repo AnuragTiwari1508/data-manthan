@@ -116,7 +116,7 @@ export function OceanographicAnalysis() {
   const selectedStationData = monitoringStations.find(s => s.id === selectedStation)
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6 px-2 sm:px-0">
       {/* Header with Real-time Status */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <div>

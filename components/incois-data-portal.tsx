@@ -68,7 +68,7 @@ export function IncoisDataPortal() {
   const Icon = currentDataset?.icon || Map
 
   return (
-    <div className="min-h-screen bg-transparent">
+  <div className="min-h-screen bg-transparent px-2 sm:px-0">
       {/* Header - INCOIS Style */}
       <div className="bg-gradient-to-r from-blue-950/90 to-slate-900/90 text-white p-4 backdrop-blur-sm">
         <div className="container mx-auto">
@@ -92,7 +92,7 @@ export function IncoisDataPortal() {
         </div>
       </div>
 
-      <div className="container mx-auto p-4 space-y-6">
+  <div className="container mx-auto p-2 sm:p-4 space-y-4 sm:space-y-6">
         {/* Control Panel */}
         <Card className="shadow-lg bg-slate-900/80 backdrop-blur-sm border-slate-800">
           <CardHeader className="bg-gradient-to-r from-slate-900 to-blue-900/90 text-white border-b border-slate-800">
